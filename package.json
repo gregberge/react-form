@@ -1,7 +1,7 @@
 {
   "name": "react-form",
   "version": "0.0.0",
-  "description": "Set of React from components based on react-formsy.",
+  "description": "Set of React form components based on react-formsy.",
   "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
