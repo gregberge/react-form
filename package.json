@@ -23,17 +23,23 @@
   "homepage": "https://github.com/doctolib/react-form#readme",
   "devDependencies": {
     "@doctolib/linter": "^1.0.0",
+    "classnames": "^2.2.0",
     "babelify": "^6.4.0",
+    "formsy-react": "^0.17.0",
     "eslint": "^1.7.3",
     "eslint-plugin-mocha": "^1.0.0",
     "eslint-plugin-react": "^3.6.3",
     "react": "^0.14.0",
+    "react-bootstrap": "^0.27.3"
     "react-dom": "^0.14.0"
   },
   "examples": {
     "title": "React form"
   },
   "dependencies": {
+    "babel-runtime": "^5.8.29"
+  },
+  "peerDependencies": {
     "classnames": "^2.2.0",
     "formsy-react": "^0.17.0",
     "react": "^0.14.0",
