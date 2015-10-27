@@ -1,0 +1,42 @@
+{
+  "name": "react-form",
+  "version": "0.0.0",
+  "description": "Set of React from components based on react-formsy.",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/doctolib/react-form.git"
+  },
+  "keywords": [
+    "react",
+    "form",
+    "control"
+  ],
+  "author": "Doctolib <tech@doctolib.fr>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/doctolib/react-form/issues"
+  },
+  "homepage": "https://github.com/doctolib/react-form#readme",
+  "devDependencies": {
+    "@doctolib/linter": "^1.0.0",
+    "babelify": "^6.4.0",
+    "eslint": "^1.7.3",
+    "eslint-plugin-mocha": "^1.0.0",
+    "eslint-plugin-react": "^3.6.3",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
+  },
+  "examples": {
+    "title": "React form"
+  },
+  "dependencies": {
+    "classnames": "^2.2.0",
+    "formsy-react": "^0.17.0",
+    "react": "^0.14.0",
+    "react-bootstrap": "^0.27.3"
+  }
+}
