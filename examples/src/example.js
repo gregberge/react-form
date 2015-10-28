@@ -77,6 +77,10 @@ const Example = React.createClass({
     this.setState({success: true});
   },
 
+  /**
+   * Manually reset form.
+   */
+
   reset() {
     ReactDOM.findDOMNode(this.refs.form).reset();
   },
