@@ -25,6 +25,7 @@
   },
   "homepage": "http://doctolib.github.io/react-form/",
   "devDependencies": {
+    "@doctolib/gulp-tasks": "^1.2.0",
     "@doctolib/linter": "^1.0.0",
     "babelify": "^6.4.0",
     "classnames": "^2.2.0",
