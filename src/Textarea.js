@@ -9,18 +9,19 @@ export default React.createClass({
 
   propTypes: {
     placeholder: PropTypes.string,
-    maxLength: PropTypes.number
+    maxLength: PropTypes.number,
+    rows: PropTypes.number
   },
 
   mixins: [Formsy.Mixin, ControlMixin],
 
   render() {
-    const {maxLength, placeholder} = this.props;
+    const {maxLength, rows, placeholder} = this.props;
     const {onChange} = this;
 
     return (
       <ControlWrapper {...this.getWrapperProps()}>
-        <textarea {...this.getControlProps()} {...{maxLength, placeholder, onChange}}/>
+        <textarea {...this.getControlProps()} {...{maxLength, rows, placeholder, onChange}}/>
       </ControlWrapper>
     );
   },
