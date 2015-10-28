@@ -4,7 +4,10 @@
   "description": "Set of React form components based on react-formsy.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cover": "gulp cover",
+    "coveralls": "npm run lint && gulp coveralls",
+    "lint": "eslint .",
+    "test": "gulp test"
   },
   "repository": {
     "type": "git",
@@ -20,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/doctolib/react-form/issues"
   },
-  "homepage": "https://github.com/doctolib/react-form#readme",
+  "homepage": "http://doctolib.github.io/react-form/",
   "devDependencies": {
     "@doctolib/linter": "^1.0.0",
     "classnames": "^2.2.0",
