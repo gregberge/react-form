@@ -1,4 +1,5 @@
 import React, {PropTypes} from 'react';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 import ControlWrapper from './ControlWrapper';
 import ControlMixin from './ControlMixin';
@@ -20,7 +21,7 @@ export default React.createClass({
     return {options: []};
   },
 
-  mixins: [Formsy.Mixin, ControlMixin],
+  mixins: [Formsy.Mixin, ControlMixin, PureRenderMixin],
 
   render() {
     const {} = this.props;

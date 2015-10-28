@@ -1,9 +1,12 @@
 import React, {PropTypes} from 'react';
 import Col from 'react-bootstrap/lib/Col';
 import classNames from 'classnames';
+import PureRenderMixin from 'react-addons-pure-render-mixin';
 
 export default React.createClass({
   displayName: 'ControlWrapper',
+
+  mixins: [PureRenderMixin],
 
   propTypes: {
     label: PropTypes.string,
