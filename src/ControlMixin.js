@@ -18,6 +18,7 @@ export default {
     };
   },
 
+  // from https://github.com/twisty/formsy-react-components/
   hashString: function(string) {
     var hash = 0;
     for (var i = 0; i < string.length; i++) {
@@ -26,6 +27,7 @@ export default {
     return hash;
   },
 
+  // from https://github.com/twisty/formsy-react-components/
   getId: function() {
       return this.props.id || this.props.name.split('[').join('_').replace(']', '') + this.hashString(JSON.stringify(this.props));
   },
@@ -42,7 +44,7 @@ export default {
   },
 
   changeValue(nextValue) {
-    const prevValue = this.state.value;
+    const prevValue = this.getValue();
     if (prevValue === nextValue)
       return;
 
