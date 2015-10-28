@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import Alert from 'react-bootstrap/lib/Alert';
 import Button from 'react-bootstrap/lib/Button';
 import Col from 'react-bootstrap/lib/Col';
-import {Form, Input, Select} from '../../src';
+import {Form, Input, Select, Textarea} from '../../src';
 
 const specialities = {
   doctor: 'Doctor',
@@ -31,6 +31,7 @@ const Example = React.createClass({
             <Input name="firstname" label="Firstname" placeholder="Ex: Greg" required/>
             <Input name="zipcode" label="Zipcode" placeholder="Ex: 91200" maxLength={6} validations="isInt" required/>
             <Select name="speciality" label="Speciality" placeholder="Choose a speciality" options={specialities} required/>
+            <Textarea name="comment" label="Comment" placeholder="Any comment?" rows={5} required/>
             <div className="form-group">
               <Col smOffset={3} sm={9}>
                 <Button bsStyle="primary" type="submit">Submit</Button>
