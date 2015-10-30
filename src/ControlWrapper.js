@@ -6,15 +6,15 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 export default React.createClass({
   displayName: 'ControlWrapper',
 
-  mixins: [PureRenderMixin],
-
   propTypes: {
-    label: PropTypes.string,
+    children: PropTypes.node.isRequired,
     className: PropTypes.string,
     componentId: PropTypes.string,
     hasError: PropTypes.bool.isRequired,
-    children: PropTypes.node.isRequired
+    label: PropTypes.string
   },
+
+  mixins: [PureRenderMixin],
 
   render() {
     const {componentId, label, children} = this.props;
@@ -25,7 +25,12 @@ export default React.createClass({
     if (label)
       return (
         <div {...{className: classNames(className, 'form-group')}}>
-          <Col sm={3} componentClass="label" className="control-label" htmlFor={componentId}>
+          <Col
+            className="control-label"
+            componentClass="label"
+            htmlFor={componentId}
+            sm={3}
+          >
             {label}
           </Col>
           <Col sm={9}>

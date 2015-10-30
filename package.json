@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "cover": "gulp cover",
-    "coveralls": "npm run lint && gulp coveralls",
+    "travis": "npm run lint && gulp coveralls",
     "lint": "eslint .",
     "test": "gulp test"
   },
@@ -29,9 +29,9 @@
   "homepage": "http://doctolib.github.io/react-form/",
   "devDependencies": {
     "@doctolib/gulp-tasks": "^1.2.0",
-    "@doctolib/linter": "^1.0.0",
     "babelify": "^6.4.0",
     "eslint": "^1.7.3",
+    "eslint-config-doctolib": "^1.0.2",
     "eslint-plugin-mocha": "^1.0.0",
     "eslint-plugin-react": "^3.6.3",
     "gulp": "^3.9.0",

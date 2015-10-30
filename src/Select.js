@@ -9,32 +9,18 @@ export default React.createClass({
   displayName: 'Select',
 
   propTypes: {
+    onChange: PropTypes.func,
     options: React.PropTypes.oneOfType([
       React.PropTypes.array,
       React.PropTypes.object
     ]),
-    onChange: PropTypes.func,
     placeholder: PropTypes.string
-  },
-
-  getDefaultProps() {
-    return {options: []};
   },
 
   mixins: [Formsy.Mixin, ControlMixin, PureRenderMixin],
 
-  render() {
-    const {} = this.props;
-    const {onChange} = this;
-
-    return (
-      <ControlWrapper {...this.getWrapperProps()}>
-        <select {...this.getControlProps()} {...{onChange}}>
-          {this.renderPlaceHolder()}
-          {this.renderOptions()}
-        </select>
-      </ControlWrapper>
-    );
+  getDefaultProps() {
+    return {options: []};
   },
 
   /**
@@ -64,7 +50,7 @@ export default React.createClass({
     if (!Array.isArray(options))
       return Object.keys(options)
         .map((key, index) =>
-          this.renderOption({value: key + '', label: options[key]}, index)
+          this.renderOption({value: String(key), label: options[key]}, index)
         );
 
     return options.map(this.renderOption);
@@ -93,5 +79,18 @@ export default React.createClass({
 
   onChange(event) {
     this.changeValue(event.target.value);
+  },
+
+  render() {
+    const {onChange} = this;
+
+    return (
+      <ControlWrapper {...this.getWrapperProps()}>
+        <select {...this.getControlProps()} {...{onChange}}>
+          {this.renderPlaceHolder()}
+          {this.renderOptions()}
+        </select>
+      </ControlWrapper>
+    );
   }
 });

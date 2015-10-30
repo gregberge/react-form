@@ -22,53 +22,6 @@ const Example = React.createClass({
     };
   },
 
-  render() {
-    return (
-      <div>
-        <Form ref="form" onValidSubmit={this.onValidSubmit} className="form-horizontal">
-          <fieldset>
-            <legend>Basic form with labels</legend>
-            {this.renderSuccessMessage()}
-            <Input name="name" label="Name" placeholder="Ex: Bergé" required/>
-            <Input name="firstname" label="Firstname" placeholder="Ex: Greg" required/>
-            <Input name="zipcode" label="Zipcode" placeholder="Ex: 91200" maxLength={6} validations="isInt" required/>
-            <Select name="speciality" label="Speciality" placeholder="Choose a speciality" options={specialities} required/>
-            <Textarea name="comment" label="Comment" placeholder="Any comment?" rows={5} required/>
-            <div className="form-group">
-              <Col smOffset={3} sm={9}>
-                <Button bsStyle="primary" type="submit">Submit</Button>
-                <Button bsStyle="default" type="reset">Reset</Button>
-                <Button bsStyle="default" type="button" onClick={this.reset}>Programmatic reset</Button>
-              </Col>
-            </div>
-          </fieldset>
-        </Form>
-
-        <Form className="form-horizontal">
-          <fieldset>
-            <legend>Custom validation</legend>
-            <Input type="password" name="password" label="Password" required/>
-            <Input type="password" name="confirmPassword" label="Confirm password" validations="sameAs:password" required/>
-            <div className="form-group">
-              <Col smOffset={3} sm={9}>
-                <Button bsStyle="primary" type="submit">Submit</Button>
-              </Col>
-            </div>
-          </fieldset>
-        </Form>
-
-        <Form className="form-horizontal">
-          <fieldset>
-            <legend>Simple fields without label</legend>
-            <Input name="name" placeholder="Name" required/>
-            <br/>
-            <Input name="firstname" placeholder="Firstname" required/>
-          </fieldset>
-        </Form>
-      </div>
-    );
-  },
-
   /**
    * Called when the form is submitted and valid.
    */
@@ -96,6 +49,53 @@ const Example = React.createClass({
       return null;
 
     return <Alert bsStyle="success">Your form was correctly submitted.</Alert>;
+  },
+
+  render() {
+    return (
+      <div>
+        <Form className="form-horizontal" onValidSubmit={this.onValidSubmit} ref="form">
+          <fieldset>
+            <legend>Basic form with labels</legend>
+            {this.renderSuccessMessage()}
+            <Input label="Name" name="name" placeholder="Ex: Bergé" required/>
+            <Input label="Firstname" name="firstname" placeholder="Ex: Greg" required/>
+            <Input label="Zipcode" maxLength={6} name="zipcode" placeholder="Ex: 91200" required validations="isInt"/>
+            <Select label="Speciality" name="speciality" options={specialities} placeholder="Choose a speciality" required/>
+            <Textarea label="Comment" name="comment" placeholder="Any comment?" required rows={5}/>
+            <div className="form-group">
+              <Col sm={9} smOffset={3}>
+                <Button bsStyle="primary" type="submit">Submit</Button>
+                <Button bsStyle="default" type="reset">Reset</Button>
+                <Button bsStyle="default" onClick={this.reset} type="button">Programmatic reset</Button>
+              </Col>
+            </div>
+          </fieldset>
+        </Form>
+
+        <Form className="form-horizontal">
+          <fieldset>
+            <legend>Custom validation</legend>
+            <Input label="Password" name="password" required type="password"/>
+            <Input label="Confirm password" name="confirmPassword" required type="password" validations="sameAs:password"/>
+            <div className="form-group">
+              <Col sm={9} smOffset={3}>
+                <Button bsStyle="primary" type="submit">Submit</Button>
+              </Col>
+            </div>
+          </fieldset>
+        </Form>
+
+        <Form className="form-horizontal">
+          <fieldset>
+            <legend>Simple fields without label</legend>
+            <Input name="name" placeholder="Name" required/>
+            <br/>
+            <Input name="firstname" placeholder="Firstname" required/>
+          </fieldset>
+        </Form>
+      </div>
+    );
   }
 });
 
