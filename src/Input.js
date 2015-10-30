@@ -9,8 +9,8 @@ export default React.createClass({
   displayName: 'Input',
 
   propTypes: {
-    placeholder: PropTypes.string,
     maxLength: PropTypes.number,
+    placeholder: PropTypes.string,
     type: PropTypes.string
   },
 
@@ -22,6 +22,16 @@ export default React.createClass({
     };
   },
 
+  /**
+   * Called when the value changes.
+   *
+   * @param {SyntheticEvent} event
+   */
+
+  onChange(event) {
+    this.changeValue(event.target.value);
+  },
+
   render() {
     const {type, maxLength, placeholder} = this.props;
     const {onChange} = this;
@@ -31,15 +41,5 @@ export default React.createClass({
         <input {...this.getControlProps()} {...{type, maxLength, placeholder, onChange}}/>
       </ControlWrapper>
     );
-  },
-
-  /**
-   * Called when the value changes.
-   *
-   * @param {SyntheticEvent} event
-   */
-
-  onChange(event) {
-    this.changeValue(event.target.value);
   }
 });

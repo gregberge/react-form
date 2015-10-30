@@ -6,10 +6,10 @@ export default {
     id: PropTypes.string,
     label: PropTypes.string,
     name: PropTypes.string,
-    value: PropTypes.string,
+    onChange: PropTypes.func,
     required: PropTypes.bool,
-    wrapperClassName: PropTypes.string,
-    onChange: PropTypes.func
+    value: PropTypes.string,
+    wrapperClassName: PropTypes.string
   },
 
   getDefaultProps() {
@@ -19,17 +19,19 @@ export default {
   },
 
   // from https://github.com/twisty/formsy-react-components/
-  hashString: function(string) {
-    var hash = 0;
-    for (var i = 0; i < string.length; i++) {
-        hash = (((hash << 5) - hash) + string.charCodeAt(i)) & 0xFFFFFFFF;
+  hashString(string) {
+    let hash = 0;
+    for (let i = 0; i < string.length; i++) {
+      hash = (((hash << 5) - hash) + string.charCodeAt(i)) & 0xFFFFFFFF;
     }
     return hash;
   },
 
   // from https://github.com/twisty/formsy-react-components/
-  getId: function() {
-      return this.props.id || this.props.name.split('[').join('_').replace(']', '') + this.hashString(JSON.stringify(this.props));
+  getId() {
+    return this.props.id
+      || this.props.name.split('[').join('_').replace(']', '')
+        + this.hashString(JSON.stringify(this.props));
   },
 
   getControlProps() {

@@ -9,12 +9,22 @@ export default React.createClass({
   displayName: 'Textarea',
 
   propTypes: {
-    placeholder: PropTypes.string,
     maxLength: PropTypes.number,
+    placeholder: PropTypes.string,
     rows: PropTypes.number
   },
 
   mixins: [Formsy.Mixin, ControlMixin, PureRenderMixin],
+
+  /**
+   * Called when the value changes.
+   *
+   * @param {SyntheticEvent} event
+   */
+
+  onChange(event) {
+    this.changeValue(event.target.value);
+  },
 
   render() {
     const {maxLength, rows, placeholder} = this.props;
@@ -25,15 +35,5 @@ export default React.createClass({
         <textarea {...this.getControlProps()} {...{maxLength, rows, placeholder, onChange}}/>
       </ControlWrapper>
     );
-  },
-
-  /**
-   * Called when the value changes.
-   *
-   * @param {SyntheticEvent} event
-   */
-
-  onChange(event) {
-    this.changeValue(event.target.value);
   }
 });
