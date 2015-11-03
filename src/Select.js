@@ -63,7 +63,7 @@ export default React.createClass({
    */
 
   renderOption(entry, key) {
-    entry = typeof entry === 'string' ? ({entry, label: entry}) : entry;
+    entry = typeof entry === 'string' ? ({value: entry, label: entry}) : entry;
     const props = {
       key,
       value: entry.value
