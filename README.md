@@ -1,5 +1,6 @@
 # react-form
 [![Build Status](https://travis-ci.org/doctolib/react-form.svg?branch=master)](https://travis-ci.org/doctolib/react-form)
+[![Coverage Status](https://coveralls.io/repos/doctolib/react-form/badge.svg?branch=master&service=github)](https://coveralls.io/github/doctolib/react-form?branch=master)
 [![Dependency Status](https://david-dm.org/doctolib/react-form.svg?theme=shields.io)](https://david-dm.org/doctolib/react-form)
 [![devDependency Status](https://david-dm.org/doctolib/react-form/dev-status.svg?theme=shields.io)](https://david-dm.org/doctolib/react-form#info=devDependencies)
 

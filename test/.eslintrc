@@ -1,0 +1,8 @@
+{
+  "extends": ["doctolib/test", "doctolib/react"],
+  "parser": "babel-eslint",
+
+  "rules": {
+    "no-unused-expressions": 0
+  }
+}
