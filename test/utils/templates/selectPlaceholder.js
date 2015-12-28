@@ -21,7 +21,7 @@ export default ({Component}) => {
       const options = domElement.querySelectorAll('option');
 
       expect(options[0]).to.have.text('Choose something');
-      expect(options[0]).to.not.have.attr('value');
+      expect(options[0]).to.have.attr('value', '');
 
       expect(options[1]).to.have.text('foo');
       expect(options[1]).to.have.attr('value', 'foo');

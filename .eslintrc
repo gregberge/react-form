@@ -1,4 +1,3 @@
 {
-  "extends": "doctolib/react",
-  "parser": "babel-eslint"
+  "extends": "doctolib/react"
 }
