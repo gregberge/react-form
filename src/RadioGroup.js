@@ -6,15 +6,16 @@ import ControlMixin from './ControlMixin';
 import Formsy from 'formsy-react';
 
 export default React.createClass({
-  displayName: 'Select',
+  displayName: 'RadioGroup',
 
   propTypes: {
+    className: PropTypes.string,
     onChange: PropTypes.func,
     options: React.PropTypes.oneOfType([
       React.PropTypes.array,
       React.PropTypes.object
     ]),
-    placeholder: PropTypes.string
+    value: PropTypes.string
   },
 
   mixins: [Formsy.Mixin, ControlMixin, PureRenderMixin],
@@ -24,43 +25,43 @@ export default React.createClass({
   },
 
   /**
-   * Render placeholder.
-   *
-   * @returns {ReactElement}
-   */
-
-  renderPlaceHolder() {
-    const {placeholder} = this.props;
-
-    if (!placeholder)
-      return null;
-
-    return <option value="">{placeholder}</option>;
-  },
-
-  /**
-   * Render options.
+   * Render radios.
    *
    * @returns {ReactElement[]}
    */
 
-  renderOptions() {
-    return this.getOptions().map(this.renderOption);
+  renderRadios() {
+    return this.getOptions().map(this.renderRadio);
   },
 
   /**
-   * Render option.
+   * Render radio input.
    *
    * @returns {ReactElement}
    */
 
-  renderOption(entry, index) {
+  renderRadio(entry, index) {
+    const {className} = this.props;
+    const checked = this.props.value === undefined || this.props.value === null
+      ? null : entry.value === this.props.value;
     const props = {
-      key: index,
+      ...this.getControlProps(),
+      id: null,
+      className: className === 'form-control' ? null : className,
       value: entry.value,
-      ref: index
+      type: 'radio',
+      checked,
+      ref: index,
+      onChange: this.onChange
     };
-    return <option {...props}>{entry.label}</option>;
+    return (
+      <label
+        className="radio-inline"
+        key={index}
+      >
+        <input {...props}/>{entry.label}
+      </label>
+    );
   },
 
   /**
@@ -70,18 +71,14 @@ export default React.createClass({
    */
 
   onChange(event) {
-    this.changeValue(event.target.value);
+    if (event.target.checked)
+      this.changeValue(event.target.value);
   },
 
   render() {
-    const {onChange} = this;
-
     return (
       <ControlWrapper {...this.getWrapperProps()}>
-        <select {...this.getControlProps()} {...{onChange}}>
-          {this.renderPlaceHolder()}
-          {this.renderOptions()}
-        </select>
+        {this.renderRadios()}
       </ControlWrapper>
     );
   }
