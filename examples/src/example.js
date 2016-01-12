@@ -1,14 +1,26 @@
+/* eslint no-console: 0 */
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 import Alert from 'react-bootstrap/lib/Alert';
 import Button from 'react-bootstrap/lib/Button';
 import Col from 'react-bootstrap/lib/Col';
-import {addValidationRule, Form, Input, Select, Textarea} from '../../src';
+import {addValidationRule, Form, Input, Select, Textarea, RadioGroup, CheckboxGroup} from '../../src';
 
 const specialities = {
   doctor: 'Doctor',
   dentist: 'Dentist'
+};
+
+const civilities = {
+  man: 'Mr',
+  woman: 'Mrs'
+};
+
+const interests = {
+  sport: 'Sport',
+  cinema: 'Cinema',
+  photography: 'Photography'
 };
 
 addValidationRule('sameAs', (values, value, field) => value === values[field]);
@@ -26,7 +38,8 @@ const Example = React.createClass({
    * Called when the form is submitted and valid.
    */
 
-  onValidSubmit() {
+  onValidSubmit(model) {
+    console.log('Form submitted with model', model);
     this.setState({success: true});
   },
 
@@ -58,10 +71,12 @@ const Example = React.createClass({
           <fieldset>
             <legend>Basic form with labels</legend>
             {this.renderSuccessMessage()}
+            <RadioGroup label="Civility" name="civility" options={civilities} required type="radio"/>
             <Input label="Name" name="name" placeholder="Ex: Bergé" required/>
             <Input label="Firstname" name="firstname" placeholder="Ex: Greg" required/>
             <Input label="Zipcode" maxLength={6} name="zipcode" placeholder="Ex: 91200" required validations="isInt"/>
             <Select label="Speciality" name="speciality" options={specialities} placeholder="Choose a speciality" required/>
+            <CheckboxGroup label="Interests" name="interests" options={interests} type="checkbox"/>
             <Textarea label="Comment" name="comment" placeholder="Any comment?" required rows={5}/>
             <div className="form-group">
               <Col sm={9} smOffset={3}>

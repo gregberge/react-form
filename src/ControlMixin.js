@@ -18,6 +18,25 @@ export default {
     };
   },
 
+  /**
+   * Get an array of options from props.
+   *
+   * @returns {{value: string, label: string}[]}
+   */
+  getOptions() {
+    const {options} = this.props;
+
+    if (!Array.isArray(options))
+      return Object.keys(options)
+        .map(key =>
+          ({value: String(key), label: options[key]})
+        );
+
+    return options.map(entry =>
+      entry = typeof entry === 'string' ? ({value: entry, label: entry}) : entry
+    );
+  },
+
   // from https://github.com/twisty/formsy-react-components/
   hashString(string) {
     let hash = 0;
@@ -47,7 +66,8 @@ export default {
 
   changeValue(nextValue) {
     const prevValue = this.getValue();
-    if (prevValue === nextValue)
+
+    if (String(prevValue) === String(nextValue))
       return;
 
     this.setValue(nextValue);
