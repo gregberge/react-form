@@ -48,7 +48,7 @@ export default {
 
   // from https://github.com/twisty/formsy-react-components/
   getId() {
-    const {leftAddon, rightAddon, ...hashProps} = {};
+    const {leftAddon, rightAddon, ...hashProps} = this.props;
     return this.props.id
       || this.props.name.split('[').join('_').replace(']', '')
         + this.hashString(JSON.stringify(hashProps));
