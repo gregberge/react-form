@@ -40,7 +40,7 @@ export default React.createClass({
 
   render() {
     const {autoCapitalize, autoCorrect, autoComplete, autoFocus,
-      maxLength, placeholder, type} = this.props;
+      maxLength, placeholder, type, leftAddon, rightAddon} = this.props;
     const {onChange} = this;
     const controlProps = {
       ...this.getControlProps(),
@@ -54,9 +54,11 @@ export default React.createClass({
 
     return (
       <ControlWrapper {...wrapperProps}>
-        {this.props.leftAddon}
+        {leftAddon
+          ? React.cloneElement(leftAddon, {control: this}) : null}
         <input {...controlProps}/>
-        {this.props.rightAddon}
+        {rightAddon
+          ? React.cloneElement(rightAddon, {control: this}) : null}
       </ControlWrapper>
     );
   }
