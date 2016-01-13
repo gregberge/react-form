@@ -5,7 +5,8 @@ import ReactDOM from 'react-dom';
 import Alert from 'react-bootstrap/lib/Alert';
 import Button from 'react-bootstrap/lib/Button';
 import Col from 'react-bootstrap/lib/Col';
-import {addValidationRule, Form, Input, Select, Textarea, RadioGroup, CheckboxGroup} from '../../src';
+import {addValidationRule, Form, Input,
+  Select, Textarea, RadioGroup, CheckboxGroup, InputAddon} from '../../src';
 
 const specialities = {
   doctor: 'Doctor',
@@ -72,9 +73,11 @@ const Example = React.createClass({
             <legend>Basic form with labels</legend>
             {this.renderSuccessMessage()}
             <RadioGroup label="Civility" name="civility" options={civilities} required type="radio"/>
-            <Input label="Name" name="name" placeholder="Ex: Bergé" required/>
+            <Input label="Name" name="name" placeholder="Ex: Bergé" rightAddon={<InputAddon>*</InputAddon>} required/>
             <Input label="Firstname" name="firstname" placeholder="Ex: Greg" required/>
-            <Input label="Zipcode" maxLength={6} name="zipcode" placeholder="Ex: 91200" required validations="isInt"/>
+            <Input label="Zipcode" leftAddon={<InputAddon>-</InputAddon>} maxLength={6} name="zipcode" placeholder="Ex: 91200"
+              required rightAddon={<InputAddon>*</InputAddon>} validations="isInt"
+            />
             <Select label="Speciality" name="speciality" options={specialities} placeholder="Choose a speciality" required/>
             <CheckboxGroup label="Interests" name="interests" options={interests} type="checkbox"/>
             <Textarea label="Comment" name="comment" placeholder="Any comment?" required rows={5}/>

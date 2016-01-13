@@ -50,6 +50,21 @@ import {Select} from '@doctolib/react-form';
 const Component = () => <Select options={{value: 'Label'}} name="select"/>;
 ```
 
+### InputAddon
+
+Addon for input.
+
+```js
+import {Input, InputAddon} from '@doctolib/react-form';
+const Component = () => (
+  <Input
+    name="firstname"
+    leftAddon={<InputAddon>hey</InputAddon>}
+    rightAddon={<InputAddon>you</InputAddon>}
+  />
+);
+
+
 ## License
 
 MIT

@@ -7,6 +7,7 @@ export default React.createClass({
   displayName: 'ControlWrapper',
 
   propTypes: {
+    hasAddon: PropTypes.bool,
     children: PropTypes.node.isRequired,
     className: PropTypes.string,
     componentId: PropTypes.string,
@@ -22,6 +23,9 @@ export default React.createClass({
       'has-error': this.props.hasError
     }, this.props.className);
 
+    const control = this.props.hasAddon
+      ? <div className="input-group">{children}</div> : children;
+
     if (label)
       return (
         <div {...{className: classNames(className, 'form-group')}}>
@@ -34,14 +38,14 @@ export default React.createClass({
             {label}
           </Col>
           <Col sm={9}>
-            {children}
+            {control}
           </Col>
         </div>
       );
 
     return (
       <span {...{className}}>
-        {children}
+        {control}
       </span>
     );
   }

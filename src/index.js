@@ -1,9 +1,9 @@
 import Formsy from 'formsy-react';
-import Input from './Input';
-import Select from './Select';
-import Textarea from './Textarea';
-import RadioGroup from './RadioGroup';
-import CheckboxGroup from './CheckboxGroup';
+export {default as Input} from './Input';
+export {default as Select} from './Select';
+export {default as Textarea} from './Textarea';
+export {default as RadioGroup} from './RadioGroup';
+export {default as CheckboxGroup} from './CheckboxGroup';
+export {default as InputAddon} from './InputAddon';
 
 export const {Form, addValidationRule} = Formsy;
-export {Input, Select, Textarea, RadioGroup, CheckboxGroup};

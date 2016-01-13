@@ -9,8 +9,14 @@ export default React.createClass({
   displayName: 'Input',
 
   propTypes: {
+    autoCorrect: PropTypes.string,
+    autoComplete: PropTypes.string,
+    autoCapitalize: PropTypes.string,
+    autoFocus: PropTypes.bool,
     maxLength: PropTypes.number,
     placeholder: PropTypes.string,
+    leftAddon: PropTypes.node,
+    rightAddon: PropTypes.node,
     type: PropTypes.string
   },
 
@@ -33,12 +39,24 @@ export default React.createClass({
   },
 
   render() {
-    const {type, maxLength, placeholder} = this.props;
+    const {autoCapitalize, autoCorrect, autoComplete, autoFocus,
+      maxLength, placeholder, type} = this.props;
     const {onChange} = this;
+    const controlProps = {
+      ...this.getControlProps(),
+      autoCapitalize, autoCorrect, autoComplete, autoFocus,
+      maxLength, placeholder, onChange, type
+    };
+    const wrapperProps = {
+      ...this.getWrapperProps(),
+      hasAddon: Boolean(this.props.leftAddon || this.props.rightAddon)
+    };
 
     return (
-      <ControlWrapper {...this.getWrapperProps()}>
-        <input {...this.getControlProps()} {...{type, maxLength, placeholder, onChange}}/>
+      <ControlWrapper {...wrapperProps}>
+        {this.props.leftAddon}
+        <input {...controlProps}/>
+        {this.props.rightAddon}
       </ControlWrapper>
     );
   }
