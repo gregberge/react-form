@@ -15,6 +15,8 @@ export default React.createClass({
     autoFocus: PropTypes.bool,
     maxLength: PropTypes.number,
     placeholder: PropTypes.string,
+    leftAddon: PropTypes.node,
+    rightAddon: PropTypes.node,
     type: PropTypes.string
   },
 
@@ -45,10 +47,16 @@ export default React.createClass({
       autoCapitalize, autoCorrect, autoComplete, autoFocus,
       maxLength, placeholder, onChange, type
     };
+    const wrapperProps = {
+      ...this.getWrapperProps(),
+      hasAddon: Boolean(this.props.leftAddon || this.props.rightAddon)
+    };
 
     return (
-      <ControlWrapper {...this.getWrapperProps()}>
+      <ControlWrapper {...wrapperProps}>
+        {this.props.leftAddon}
         <input {...controlProps}/>
+        {this.props.rightAddon}
       </ControlWrapper>
     );
   }
