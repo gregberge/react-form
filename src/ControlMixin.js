@@ -55,8 +55,8 @@ export default {
   },
 
   getControlProps() {
-    const {className, name, value} = this.props;
-    return {className, id: this.getId(), name, value};
+    const {className, name, value, disabled} = this.props;
+    return {className, id: this.getId(), name, value, disabled};
   },
 
   getWrapperProps() {
