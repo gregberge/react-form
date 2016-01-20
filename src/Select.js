@@ -4,6 +4,7 @@ import PureRenderMixin from 'react-addons-pure-render-mixin';
 import ControlWrapper from './ControlWrapper';
 import ControlMixin from './ControlMixin';
 import Formsy from 'formsy-react';
+import classNames from 'classnames';
 
 export default React.createClass({
   displayName: 'Select',
@@ -76,9 +77,12 @@ export default React.createClass({
   render() {
     const {onChange} = this;
 
+    const controlProps = this.getControlProps();
+    const className = classNames(controlProps.className, {placeholder: !this.getValue()});
+
     return (
       <ControlWrapper {...this.getWrapperProps()}>
-        <select {...this.getControlProps()} {...{onChange}}>
+        <select {...controlProps} {...{onChange, className}}>
           {this.renderPlaceHolder()}
           {this.renderOptions()}
         </select>

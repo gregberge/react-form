@@ -1,4 +1,5 @@
 import Formsy from 'formsy-react';
+export {default as ControlWrapper} from './ControlWrapper';
 export {default as Input} from './Input';
 export {default as Select} from './Select';
 export {default as Textarea} from './Textarea';

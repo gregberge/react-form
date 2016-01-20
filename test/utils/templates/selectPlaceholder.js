@@ -18,6 +18,7 @@ export default ({Component}) => {
       );
 
       const domElement = ReactDOM.findDOMNode(instance);
+      const select = domElement.querySelector('select');
       const options = domElement.querySelectorAll('option');
 
       expect(options[0]).to.have.text('Choose something');
@@ -28,6 +29,13 @@ export default ({Component}) => {
 
       expect(options[2]).to.have.text('10');
       expect(options[2]).to.have.attr('value', '10');
+
+      expect(select).to.have.class('placeholder');
+
+      options[2].selected = true;
+      TestUtils.Simulate.change(options[2]);
+
+      expect(select).to.not.have.class('placeholder');
     });
   });
 };
