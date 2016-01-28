@@ -28,7 +28,7 @@
   },
   "homepage": "http://doctolib.github.io/react-form/",
   "devDependencies": {
-    "@doctolib/gulp-tasks": "^3.0.0",
+    "@doctolib/gulp-tasks": "^4.0.0",
     "babel-eslint": "^5.0.0-beta6",
     "babel-plugin-transform-runtime": "^6.3.13",
     "babel-preset-doctolib": "^1.1.3",
