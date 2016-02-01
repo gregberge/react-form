@@ -76,7 +76,7 @@ describe('CheckboxGroup', () => {
     });
   });
 
-  describe('radio options', () => {
+  describe('checkbox options', () => {
     it('should support array', () => {
       const instance = TestUtils.renderIntoDocument(
         <Form>
