@@ -23,6 +23,16 @@ import {Form} from '@doctolib/react-form';
 const Component = () => <Form/>;
 ```
 
+### HOC
+
+Wrapper used to create custom control compatible with react-form validation.
+All props, states and methods are accessible via props in the wrapped component.
+
+```js
+import {HOC} from '@doctolib/react-form';
+const Component = HOC((...props) => <input {...props} />);
+```
+
 ### Input
 
 Input component.
@@ -63,6 +73,35 @@ const Component = () => (
     rightAddon={<InputAddon>you</InputAddon>}
   />
 );
+```
+
+### RadioGroup
+
+Group of radios.
+
+```js
+import {RadioGroup} from '@doctolib/react-form';
+const Component = () => (
+  <RadioGroup
+    name="radio"
+    options={{value: 'Label'}}
+  />
+);
+```
+
+### CheckboxGroup
+
+Group of checkboxes.
+
+```js
+import {CheckboxGroup} from '@doctolib/react-form';
+const Component = () => (
+  <CheckboxGroup
+    name="checkbox"
+    options={{value: 'Label'}}
+  />
+);
+```
 
 
 ## License
