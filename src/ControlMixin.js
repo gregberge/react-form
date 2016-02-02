@@ -12,6 +12,20 @@ export default {
     wrapperClassName: PropTypes.string
   },
 
+  /**
+   * Patch formsy to support defaultValue.
+   */
+  componentWillMount() {
+    const value = typeof this.props.defaultValue === 'undefined'
+      ? this.props.value
+      : this.props.defaultValue;
+
+    this.setState({
+      _value: value,
+      _pristineValue: value
+    });
+  },
+
   getDefaultProps() {
     return {
       className: 'form-control'
@@ -55,7 +69,8 @@ export default {
   },
 
   getControlProps() {
-    const {className, name, value, disabled} = this.props;
+    const {className, name, disabled} = this.props;
+    const value = this.getValue();
     return {className, id: this.getId(), name, value, disabled};
   },
 

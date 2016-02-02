@@ -74,4 +74,16 @@ export default ({Component, element}) => {
       expect(wrapper).to.have.class('wrapp');
     });
   });
+
+  describe('defaultValue', () => {
+    it('should support defaultValue', () => {
+      const instance = TestUtils.renderIntoDocument(
+        <Form><Component name="comp" options={{foo: 'foo'}} defaultValue="foo"/></Form>
+      );
+
+      const domElement = ReactDOM.findDOMNode(instance);
+      const el = domElement.querySelector(element);
+      expect(el.value).to.equal('foo');
+    });
+  });
 };
