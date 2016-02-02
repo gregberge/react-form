@@ -13,6 +13,11 @@ const specialities = {
   dentist: 'Dentist'
 };
 
+const origins = {
+  french: 'French',
+  english: 'English'
+};
+
 const civilities = {
   man: 'Mr',
   woman: 'Mrs'
@@ -79,6 +84,7 @@ const Example = React.createClass({
               required rightAddon={<InputAddon>*</InputAddon>} validations="isInt"
             />
             <Select label="Speciality" name="speciality" options={specialities} placeholder="Choose a speciality" required/>
+            <Select label="Origin" name="origin" options={origins} defaultValue="french" required/>
             <CheckboxGroup label="Interests" name="interests" options={interests} type="checkbox"/>
             <Textarea label="Comment" name="comment" placeholder="Any comment?" required rows={5}/>
             <div className="form-group">
