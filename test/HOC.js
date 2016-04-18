@@ -20,7 +20,7 @@ describe('HOC', () => {
         setValue: PropTypes.func.isRequired
       },
 
-      onChange(domEvent) {
+      handleChange(domEvent) {
         this.props.setValue(domEvent.target.value);
       },
 
@@ -29,7 +29,7 @@ describe('HOC', () => {
           <input
             type="text"
             name={this.props.name}
-            onChange={this.onChange}
+            onChange={this.handleChange}
             value={this.props.getValue()}
           />
         );
@@ -39,7 +39,7 @@ describe('HOC', () => {
     const submitSpy = sinon.spy();
     const instance = TestUtils.renderIntoDocument(
       <Form onValidSubmit={submitSpy}>
-        <BaseComponent name="test"/>
+        <BaseComponent name="test" value="" />
         <button type="submit">Submit</button>
       </Form>
     );

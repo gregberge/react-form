@@ -16,12 +16,12 @@ describe('CheckboxGroup', () => {
     describe('without label', () => {
       it('should wrap it in a span', () => {
         const instance = TestUtils.renderIntoDocument(
-          <Form><CheckboxGroup name="comp" options={OPTIONS}/></Form>
+          <Form><CheckboxGroup name="comp" options={OPTIONS} /></Form>
         );
 
         const domElement = ReactDOM.findDOMNode(instance);
 
-        expect(domElement).to.contain(`span > label > input`);
+        expect(domElement).to.contain('span > label > input');
 
         const checkboxes = Array.from(domElement.querySelectorAll('input'));
         expect(checkboxes).to.length(2);
@@ -35,13 +35,13 @@ describe('CheckboxGroup', () => {
     describe('with label', () => {
       it('should wrap it in a div and display label', () => {
         const instance = TestUtils.renderIntoDocument(
-          <Form><CheckboxGroup label="My label" name="comp" options={OPTIONS}/></Form>
+          <Form><CheckboxGroup label="My label" name="comp" options={OPTIONS} /></Form>
         );
 
         const domElement = ReactDOM.findDOMNode(instance);
         const label = domElement.querySelector('label');
 
-        expect(domElement).to.contain(`div > label > input`);
+        expect(domElement).to.contain('div > label > input');
         expect(domElement).to.contain('div > label');
         expect(label).to.have.text('My label');
 
@@ -55,7 +55,7 @@ describe('CheckboxGroup', () => {
 
       it('should not have an id', () => {
         const instance = TestUtils.renderIntoDocument(
-          <Form><CheckboxGroup label="My label" name="comp" options={OPTIONS}/></Form>
+          <Form><CheckboxGroup label="My label" name="comp" options={OPTIONS} /></Form>
         );
 
         const domElement = ReactDOM.findDOMNode(instance);
@@ -68,7 +68,7 @@ describe('CheckboxGroup', () => {
   describe('wrapperClassName', () => {
     it('should support wrapperClassName', () => {
       const instance = TestUtils.renderIntoDocument(
-        <Form><CheckboxGroup name="comp" options={OPTIONS} wrapperClassName="wrapp"/></Form>
+        <Form><CheckboxGroup name="comp" options={OPTIONS} wrapperClassName="wrapp" /></Form>
       );
 
       const wrapper = ReactDOM.findDOMNode(instance).children[0];
@@ -195,14 +195,14 @@ describe('CheckboxGroup', () => {
       checkboxes[0].checked = true;
       TestUtils.Simulate.change(checkboxes[0]);
 
-      expect(spy).to.be.calledOnce;
+      expect(spy).to.be.calledOnce();
 
       checkboxes[0].checked = true;
       TestUtils.Simulate.change(checkboxes[0]);
 
-      expect(spy).to.be.calledOnce;
+      expect(spy).to.be.calledOnce();
 
-      expect(spy).to.be.calledOnce;
+      expect(spy).to.be.calledOnce();
       expect(spy).to.be.calledWith(['foo']);
     });
   });

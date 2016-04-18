@@ -47,7 +47,7 @@ export default {
         );
 
     return options.map(entry =>
-      entry = typeof entry === 'string' ? ({value: entry, label: entry}) : entry
+      typeof entry === 'string' ? ({value: entry, label: entry}) : entry
     );
   },
 
@@ -62,7 +62,13 @@ export default {
 
   // from https://github.com/twisty/formsy-react-components/
   getId() {
-    const {leftAddon, rightAddon, ...hashProps} = this.props;
+    const {
+      /* eslint-disable no-unused-vars */
+      leftAddon,
+      rightAddon,
+      /* eslint-enable no-unused-vars */
+      ...hashProps
+    } = this.props;
     return this.props.id
       || this.props.name.split('[').join('_').replace(']', '')
         + this.hashString(JSON.stringify(hashProps));

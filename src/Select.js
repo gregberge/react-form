@@ -18,11 +18,11 @@ export default React.createClass({
     placeholder: PropTypes.string
   },
 
-  mixins: [Formsy.Mixin, ControlMixin, PureRenderMixin],
-
   getDefaultProps() {
     return {options: []};
   },
+
+  mixins: [Formsy.Mixin, ControlMixin, PureRenderMixin],
 
   /**
    * Render placeholder.

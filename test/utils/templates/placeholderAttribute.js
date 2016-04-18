@@ -8,7 +8,7 @@ export default ({Component, element}) => {
   describe('placeholder', () => {
     it('should support placeholder attribute', () => {
       const instance = TestUtils.renderIntoDocument(
-        <Form><Component name="comp" placeholder="my placeholder"/></Form>
+        <Form><Component name="comp" placeholder="my placeholder" /></Form>
       );
 
       const el = ReactDOM.findDOMNode(instance).querySelector(element);

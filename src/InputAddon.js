@@ -16,7 +16,11 @@ export default React.createClass({
   mixins: [PureRenderMixin],
 
   render() {
-    const {children, className, control, ...props} = this.props;
+    const {
+      /* eslint-disable no-unused-vars */
+      control,
+      /* eslint-enable no-unused-vars */
+      children, className, ...props} = this.props;
     const spanProps = {
       ...props,
       className: classNames('input-group-addon', className)

@@ -1,3 +1,7 @@
 {
-  "extends": "doctolib/react"
+  "extends": "doctolib/react",
+
+  "rules": {
+    "react/prefer-es6-class": 0
+  }
 }

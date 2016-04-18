@@ -45,12 +45,12 @@ export default ({Component, element}) => {
       el.value = 'foo';
       TestUtils.Simulate.change(el);
 
-      expect(spy).to.not.be.called;
+      expect(spy).to.not.be.called();
 
       el.value = 'bar';
       TestUtils.Simulate.change(el);
 
-      expect(spy).to.be.calledOnce;
+      expect(spy).to.be.calledOnce();
       expect(spy).to.be.calledWith('bar');
     });
   });

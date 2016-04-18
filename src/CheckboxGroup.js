@@ -20,11 +20,11 @@ export default React.createClass({
     value: PropTypes.arrayOf(PropTypes.string)
   },
 
-  mixins: [Formsy.Mixin, ControlMixin, PureRenderMixin],
-
   getDefaultProps() {
     return {value: DEFAULT_VALUE, options: []};
   },
+
+  mixins: [Formsy.Mixin, ControlMixin, PureRenderMixin],
 
   /**
    * Render checkboxes.
@@ -61,7 +61,7 @@ export default React.createClass({
         className="checkbox-inline"
         key={index}
       >
-        <input {...props}/>{entry.label}
+        <input {...props} />{entry.label}
       </label>
     );
   },

@@ -20,13 +20,13 @@ export default React.createClass({
     type: PropTypes.string
   },
 
-  mixins: [Formsy.Mixin, ControlMixin, PureRenderMixin],
-
   getDefaultProps() {
     return {
       type: 'text'
     };
   },
+
+  mixins: [Formsy.Mixin, ControlMixin, PureRenderMixin],
 
   /**
    * Called when the value changes.
@@ -56,7 +56,7 @@ export default React.createClass({
       <ControlWrapper {...wrapperProps}>
         {leftAddon
           ? React.cloneElement(leftAddon, {control: this}) : null}
-        <input {...controlProps}/>
+        <input {...controlProps} />
         {rightAddon
           ? React.cloneElement(rightAddon, {control: this}) : null}
       </ControlWrapper>

@@ -32,7 +32,7 @@ export default React.createClass({
 
     return (
       <ControlWrapper {...this.getWrapperProps()}>
-        <textarea {...this.getControlProps()} {...{maxLength, rows, placeholder, onChange}}/>
+        <textarea {...this.getControlProps()} {...{maxLength, rows, placeholder, onChange}} />
       </ControlWrapper>
     );
   }

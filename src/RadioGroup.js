@@ -18,11 +18,11 @@ export default React.createClass({
     value: PropTypes.string
   },
 
-  mixins: [Formsy.Mixin, ControlMixin, PureRenderMixin],
-
   getDefaultProps() {
     return {options: []};
   },
+
+  mixins: [Formsy.Mixin, ControlMixin, PureRenderMixin],
 
   /**
    * Render radios.
@@ -59,7 +59,7 @@ export default React.createClass({
         className="radio-inline"
         key={index}
       >
-        <input {...props}/>{entry.label}
+        <input {...props} />{entry.label}
       </label>
     );
   },
