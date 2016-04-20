@@ -1,6 +1,6 @@
 {
   "name": "@doctolib/react-form",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Set of React form components based on react-formsy.",
   "main": "lib/index.js",
   "files": [
