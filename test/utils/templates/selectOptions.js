@@ -13,7 +13,7 @@ export default ({Component}) => {
             name="comp"
             options={['foo', '10']}
           />
-        </Form>
+        </Form>,
       );
 
       const domElement = ReactDOM.findDOMNode(instance);
@@ -33,10 +33,10 @@ export default ({Component}) => {
             name="comp"
             options={[
               {label: 'Book', value: 'book'},
-              {label: 'Chair', value: 'chair'}
+              {label: 'Chair', value: 'chair'},
             ]}
           />
-        </Form>
+        </Form>,
       );
 
       const domElement = ReactDOM.findDOMNode(instance);
@@ -56,10 +56,10 @@ export default ({Component}) => {
             name="comp"
             options={{
               book: 'Book',
-              chair: 'Chair'
+              chair: 'Chair',
             }}
           />
-        </Form>
+        </Form>,
       );
 
       const domElement = ReactDOM.findDOMNode(instance);

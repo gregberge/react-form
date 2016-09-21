@@ -11,7 +11,7 @@ export default React.createClass({
   propTypes: {
     maxLength: PropTypes.number,
     placeholder: PropTypes.string,
-    rows: PropTypes.number
+    rows: PropTypes.number,
   },
 
   mixins: [Formsy.Mixin, ControlMixin, PureRenderMixin],
@@ -35,5 +35,5 @@ export default React.createClass({
         <textarea {...this.getControlProps()} {...{maxLength, rows, placeholder, onChange}} />
       </ControlWrapper>
     );
-  }
+  },
 });

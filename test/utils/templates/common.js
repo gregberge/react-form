@@ -9,7 +9,7 @@ export default ({Component, element}) => {
     describe('without label', () => {
       it('should wrap it in a span', () => {
         const instance = TestUtils.renderIntoDocument(
-          <Form><Component name="comp" /></Form>
+          <Form><Component name="comp" /></Form>,
         );
 
         const domElement = ReactDOM.findDOMNode(instance);
@@ -23,7 +23,7 @@ export default ({Component, element}) => {
     describe('with label', () => {
       it('should wrap it in a div and display label', () => {
         const instance = TestUtils.renderIntoDocument(
-          <Form><Component label="My label" name="comp" /></Form>
+          <Form><Component label="My label" name="comp" /></Form>,
         );
 
         const domElement = ReactDOM.findDOMNode(instance);
@@ -39,7 +39,7 @@ export default ({Component, element}) => {
 
       it('should work without an id', () => {
         const instance = TestUtils.renderIntoDocument(
-          <Form><Component label="My label" name="comp" /></Form>
+          <Form><Component label="My label" name="comp" /></Form>,
         );
 
         const domElement = ReactDOM.findDOMNode(instance);
@@ -51,7 +51,7 @@ export default ({Component, element}) => {
 
       it('should work with an id', () => {
         const instance = TestUtils.renderIntoDocument(
-          <Form><Component id="my-custom-id" label="My label" name="comp" /></Form>
+          <Form><Component id="my-custom-id" label="My label" name="comp" /></Form>,
         );
 
         const domElement = ReactDOM.findDOMNode(instance);
@@ -67,7 +67,7 @@ export default ({Component, element}) => {
   describe('wrapperClassName', () => {
     it('should support wrapperClassName', () => {
       const instance = TestUtils.renderIntoDocument(
-        <Form><Component name="comp" wrapperClassName="wrapp" /></Form>
+        <Form><Component name="comp" wrapperClassName="wrapp" /></Form>,
       );
 
       const wrapper = ReactDOM.findDOMNode(instance).children[0];
@@ -78,7 +78,7 @@ export default ({Component, element}) => {
   describe('defaultValue', () => {
     it('should support defaultValue', () => {
       const instance = TestUtils.renderIntoDocument(
-        <Form><Component name="comp" options={{foo: 'foo'}} defaultValue="foo" /></Form>
+        <Form><Component name="comp" options={{foo: 'foo'}} defaultValue="foo" /></Form>,
       );
 
       const domElement = ReactDOM.findDOMNode(instance);

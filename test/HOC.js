@@ -17,7 +17,7 @@ describe('HOC', () => {
       propTypes: {
         name: PropTypes.string.isRequired,
         getValue: PropTypes.func.isRequired,
-        setValue: PropTypes.func.isRequired
+        setValue: PropTypes.func.isRequired,
       },
 
       handleChange(domEvent) {
@@ -33,7 +33,7 @@ describe('HOC', () => {
             value={this.props.getValue()}
           />
         );
-      }
+      },
     }));
 
     const submitSpy = sinon.spy();
@@ -41,7 +41,7 @@ describe('HOC', () => {
       <Form onValidSubmit={submitSpy}>
         <BaseComponent name="test" value="" />
         <button type="submit">Submit</button>
-      </Form>
+      </Form>,
     );
     const form = ReactDOM.findDOMNode(instance);
     const input = form.querySelector('input');

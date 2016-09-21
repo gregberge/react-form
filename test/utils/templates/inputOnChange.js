@@ -10,7 +10,7 @@ export default ({Component, element}) => {
     it('should support onChange', () => {
       const spy = sinon.spy();
       const instance = TestUtils.renderIntoDocument(
-        <Form><Component name="comp" defaultValue="" onChange={spy} /></Form>
+        <Form><Component name="comp" defaultValue="" onChange={spy} /></Form>,
       );
 
       const el = ReactDOM.findDOMNode(instance).querySelector(element);
@@ -24,7 +24,7 @@ export default ({Component, element}) => {
     it('should prevent additional triggering', () => {
       const spy = sinon.spy();
       const instance = TestUtils.renderIntoDocument(
-        <Form><Component name="comp" onChange={spy} value="10" /></Form>
+        <Form><Component name="comp" onChange={spy} value="10" /></Form>,
       );
 
       const el = ReactDOM.findDOMNode(instance).querySelector(element);

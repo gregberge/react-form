@@ -14,7 +14,7 @@ export default ({Component, element}) => {
             options={['foo', '10']}
             validations="isNumeric"
           />
-        </Form>
+        </Form>,
       );
 
       const domElement = ReactDOM.findDOMNode(instance);

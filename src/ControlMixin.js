@@ -9,7 +9,7 @@ export default {
     onChange: PropTypes.func,
     required: PropTypes.bool,
     value: PropTypes.string,
-    wrapperClassName: PropTypes.string
+    wrapperClassName: PropTypes.string,
   },
 
   /**
@@ -22,13 +22,13 @@ export default {
 
     this.setState({
       _value: value,
-      _pristineValue: value
+      _pristineValue: value,
     });
   },
 
   getDefaultProps() {
     return {
-      className: 'form-control'
+      className: 'form-control',
     };
   },
 
@@ -43,11 +43,11 @@ export default {
     if (!Array.isArray(options))
       return Object.keys(options)
         .map(key =>
-          ({value: String(key), label: options[key]})
+          ({value: String(key), label: options[key]}),
         );
 
     return options.map(entry =>
-      typeof entry === 'string' ? ({value: entry, label: entry}) : entry
+      typeof entry === 'string' ? ({value: entry, label: entry}) : entry,
     );
   },
 
@@ -67,7 +67,7 @@ export default {
       leftAddon,
       rightAddon,
       /* eslint-enable no-unused-vars */
-      ...hashProps
+      ...hashProps,
     } = this.props;
     return this.props.id
       || this.props.name.split('[').join('_').replace(']', '')
@@ -96,5 +96,5 @@ export default {
 
     if (this.props.onChange)
       this.props.onChange(nextValue);
-  }
+  },
 };

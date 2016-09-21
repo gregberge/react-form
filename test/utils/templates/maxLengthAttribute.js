@@ -8,7 +8,7 @@ export default ({Component, element}) => {
   describe('maxLength', () => {
     it('should support maxLength attribute', () => {
       const instance = TestUtils.renderIntoDocument(
-        <Form><Component maxLength={10} name="comp" /></Form>
+        <Form><Component maxLength={10} name="comp" /></Form>,
       );
 
       const el = ReactDOM.findDOMNode(instance).querySelector(element);
