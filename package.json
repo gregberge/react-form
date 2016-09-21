@@ -44,7 +44,7 @@
     "react": "^15.0.1",
     "react-addons-pure-render-mixin": "^15.0.1",
     "react-addons-test-utils": "^15.0.1",
-    "react-bootstrap": "^0.29.0",
+    "react-bootstrap": "^0.30.2",
     "react-dom": "^15.0.1",
     "sinon": "^1.17.2",
     "sinon-chai": "^2.8.0"
@@ -60,6 +60,6 @@
     "react": "^15.0.1",
     "react-dom": "^15.0.1",
     "react-addons-pure-render-mixin": "^15.0.1",
-    "react-bootstrap": "^0.29.0"
+    "react-bootstrap": "^0.30.2"
   }
 }
