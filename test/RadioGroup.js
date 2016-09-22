@@ -16,7 +16,7 @@ describe('RadioGroup', () => {
     describe('without label', () => {
       it('should wrap it in a span', () => {
         const instance = TestUtils.renderIntoDocument(
-          <Form><RadioGroup name="comp" options={OPTIONS} /></Form>
+          <Form><RadioGroup name="comp" options={OPTIONS} /></Form>,
         );
 
         const domElement = ReactDOM.findDOMNode(instance);
@@ -35,7 +35,7 @@ describe('RadioGroup', () => {
     describe('with label', () => {
       it('should wrap it in a div and display label', () => {
         const instance = TestUtils.renderIntoDocument(
-          <Form><RadioGroup label="My label" name="comp" options={OPTIONS} /></Form>
+          <Form><RadioGroup label="My label" name="comp" options={OPTIONS} /></Form>,
         );
 
         const domElement = ReactDOM.findDOMNode(instance);
@@ -55,7 +55,7 @@ describe('RadioGroup', () => {
 
       it('should not have an id', () => {
         const instance = TestUtils.renderIntoDocument(
-          <Form><RadioGroup label="My label" name="comp" options={OPTIONS} /></Form>
+          <Form><RadioGroup label="My label" name="comp" options={OPTIONS} /></Form>,
         );
 
         const domElement = ReactDOM.findDOMNode(instance);
@@ -68,7 +68,7 @@ describe('RadioGroup', () => {
   describe('wrapperClassName', () => {
     it('should support wrapperClassName', () => {
       const instance = TestUtils.renderIntoDocument(
-        <Form><RadioGroup name="comp" options={OPTIONS} wrapperClassName="wrapp" /></Form>
+        <Form><RadioGroup name="comp" options={OPTIONS} wrapperClassName="wrapp" /></Form>,
       );
 
       const wrapper = ReactDOM.findDOMNode(instance).children[0];
@@ -84,7 +84,7 @@ describe('RadioGroup', () => {
             name="comp"
             options={['foo', '10']}
           />
-        </Form>
+        </Form>,
       );
 
       const domElement = ReactDOM.findDOMNode(instance);
@@ -105,10 +105,10 @@ describe('RadioGroup', () => {
             name="comp"
             options={[
               {label: 'Book', value: 'book'},
-              {label: 'Chair', value: 'chair'}
+              {label: 'Chair', value: 'chair'},
             ]}
           />
-        </Form>
+        </Form>,
       );
 
       const domElement = ReactDOM.findDOMNode(instance);
@@ -129,10 +129,10 @@ describe('RadioGroup', () => {
             name="comp"
             options={{
               book: 'Book',
-              chair: 'Chair'
+              chair: 'Chair',
             }}
           />
-        </Form>
+        </Form>,
       );
 
       const domElement = ReactDOM.findDOMNode(instance);
@@ -156,7 +156,7 @@ describe('RadioGroup', () => {
             options={['foo', '10']}
             required
           />
-        </Form>
+        </Form>,
       );
 
       const domElement = ReactDOM.findDOMNode(instance);
@@ -183,7 +183,7 @@ describe('RadioGroup', () => {
             onChange={spy}
             options={['foo', 'bar']}
           />
-        </Form>
+        </Form>,
       );
 
       const radios = ReactDOM.findDOMNode(instance).querySelectorAll('input');
@@ -208,7 +208,7 @@ describe('RadioGroup', () => {
             onChange={spy}
             options={['foo', 'bar']}
           />
-        </Form>
+        </Form>,
       );
 
       const radios = ReactDOM.findDOMNode(instance).querySelectorAll('input');

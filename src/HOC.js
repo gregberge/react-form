@@ -22,8 +22,8 @@ module.exports = function (Component) {
         showError: this.showError,
         isValidValue: this.isValidValue,
         ...this.props,
-        ...this.state
+        ...this.state,
       });
-    }
+    },
   });
 };

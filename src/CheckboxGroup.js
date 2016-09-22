@@ -15,9 +15,9 @@ export default React.createClass({
     onChange: PropTypes.func,
     options: React.PropTypes.oneOfType([
       React.PropTypes.array,
-      React.PropTypes.object
+      React.PropTypes.object,
     ]),
-    value: PropTypes.arrayOf(PropTypes.string)
+    value: PropTypes.arrayOf(PropTypes.string),
   },
 
   getDefaultProps() {
@@ -54,7 +54,7 @@ export default React.createClass({
       type: 'checkbox',
       checked,
       ref: index,
-      onChange: this.onChange
+      onChange: this.onChange,
     };
     return (
       <label
@@ -87,5 +87,5 @@ export default React.createClass({
         {this.renderCheckboxes()}
       </ControlWrapper>
     );
-  }
+  },
 });

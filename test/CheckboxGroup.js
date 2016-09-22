@@ -16,7 +16,7 @@ describe('CheckboxGroup', () => {
     describe('without label', () => {
       it('should wrap it in a span', () => {
         const instance = TestUtils.renderIntoDocument(
-          <Form><CheckboxGroup name="comp" options={OPTIONS} /></Form>
+          <Form><CheckboxGroup name="comp" options={OPTIONS} /></Form>,
         );
 
         const domElement = ReactDOM.findDOMNode(instance);
@@ -35,7 +35,7 @@ describe('CheckboxGroup', () => {
     describe('with label', () => {
       it('should wrap it in a div and display label', () => {
         const instance = TestUtils.renderIntoDocument(
-          <Form><CheckboxGroup label="My label" name="comp" options={OPTIONS} /></Form>
+          <Form><CheckboxGroup label="My label" name="comp" options={OPTIONS} /></Form>,
         );
 
         const domElement = ReactDOM.findDOMNode(instance);
@@ -55,7 +55,7 @@ describe('CheckboxGroup', () => {
 
       it('should not have an id', () => {
         const instance = TestUtils.renderIntoDocument(
-          <Form><CheckboxGroup label="My label" name="comp" options={OPTIONS} /></Form>
+          <Form><CheckboxGroup label="My label" name="comp" options={OPTIONS} /></Form>,
         );
 
         const domElement = ReactDOM.findDOMNode(instance);
@@ -68,7 +68,7 @@ describe('CheckboxGroup', () => {
   describe('wrapperClassName', () => {
     it('should support wrapperClassName', () => {
       const instance = TestUtils.renderIntoDocument(
-        <Form><CheckboxGroup name="comp" options={OPTIONS} wrapperClassName="wrapp" /></Form>
+        <Form><CheckboxGroup name="comp" options={OPTIONS} wrapperClassName="wrapp" /></Form>,
       );
 
       const wrapper = ReactDOM.findDOMNode(instance).children[0];
@@ -84,7 +84,7 @@ describe('CheckboxGroup', () => {
             name="comp"
             options={['foo', '10']}
           />
-        </Form>
+        </Form>,
       );
 
       const domElement = ReactDOM.findDOMNode(instance);
@@ -105,10 +105,10 @@ describe('CheckboxGroup', () => {
             name="comp"
             options={[
               {label: 'Book', value: 'book'},
-              {label: 'Chair', value: 'chair'}
+              {label: 'Chair', value: 'chair'},
             ]}
           />
-        </Form>
+        </Form>,
       );
 
       const domElement = ReactDOM.findDOMNode(instance);
@@ -129,10 +129,10 @@ describe('CheckboxGroup', () => {
             name="comp"
             options={{
               book: 'Book',
-              chair: 'Chair'
+              chair: 'Chair',
             }}
           />
-        </Form>
+        </Form>,
       );
 
       const domElement = ReactDOM.findDOMNode(instance);
@@ -157,7 +157,7 @@ describe('CheckboxGroup', () => {
             onChange={spy}
             options={['foo', 'bar']}
           />
-        </Form>
+        </Form>,
       );
 
       const checkboxes = ReactDOM.findDOMNode(instance).querySelectorAll('input');
@@ -187,7 +187,7 @@ describe('CheckboxGroup', () => {
             onChange={spy}
             options={['foo', 'bar']}
           />
-        </Form>
+        </Form>,
       );
 
       const checkboxes = ReactDOM.findDOMNode(instance).querySelectorAll('input');

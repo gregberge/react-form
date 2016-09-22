@@ -14,7 +14,7 @@ export default ({Component}) => {
             options={['foo', '10']}
             placeholder="Choose something"
           />
-        </Form>
+        </Form>,
       );
 
       const domElement = ReactDOM.findDOMNode(instance);

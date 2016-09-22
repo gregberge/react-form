@@ -12,7 +12,7 @@ export default React.createClass({
     className: PropTypes.string,
     componentId: PropTypes.string,
     hasError: PropTypes.bool.isRequired,
-    label: PropTypes.string
+    label: PropTypes.string,
   },
 
   mixins: [PureRenderMixin],
@@ -20,7 +20,7 @@ export default React.createClass({
   render() {
     const {componentId, label, children} = this.props;
     const className = classNames({
-      'has-error': this.props.hasError
+      'has-error': this.props.hasError,
     }, this.props.className);
 
     const control = this.props.hasAddon
@@ -48,5 +48,5 @@ export default React.createClass({
         {control}
       </span>
     );
-  }
+  },
 });

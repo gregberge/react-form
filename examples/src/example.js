@@ -10,30 +10,30 @@ import {addValidationRule, Form, Input,
 
 const specialities = {
   doctor: 'Doctor',
-  dentist: 'Dentist'
+  dentist: 'Dentist',
 };
 
 const origins = {
   french: 'French',
-  english: 'English'
+  english: 'English',
 };
 
 const civilities = {
   man: 'Mr',
-  woman: 'Mrs'
+  woman: 'Mrs',
 };
 
 const interests = {
   sport: 'Sport',
   cinema: 'Cinema',
-  photography: 'Photography'
+  photography: 'Photography',
 };
 
 addValidationRule('sameAs', (values, value, field) => value === values[field]);
 
 class Example extends Component {
   state = {
-    success: false
+    success: false,
   };
 
   /**

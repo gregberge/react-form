@@ -17,12 +17,12 @@ export default React.createClass({
     placeholder: PropTypes.string,
     leftAddon: PropTypes.node,
     rightAddon: PropTypes.node,
-    type: PropTypes.string
+    type: PropTypes.string,
   },
 
   getDefaultProps() {
     return {
-      type: 'text'
+      type: 'text',
     };
   },
 
@@ -45,11 +45,11 @@ export default React.createClass({
     const controlProps = {
       ...this.getControlProps(),
       autoCapitalize, autoCorrect, autoComplete, autoFocus,
-      maxLength, placeholder, onChange, type
+      maxLength, placeholder, onChange, type,
     };
     const wrapperProps = {
       ...this.getWrapperProps(),
-      hasAddon: Boolean(this.props.leftAddon || this.props.rightAddon)
+      hasAddon: Boolean(this.props.leftAddon || this.props.rightAddon),
     };
 
     return (
@@ -61,5 +61,5 @@ export default React.createClass({
           ? React.cloneElement(rightAddon, {control: this}) : null}
       </ControlWrapper>
     );
-  }
+  },
 });

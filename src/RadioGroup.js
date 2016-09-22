@@ -13,9 +13,9 @@ export default React.createClass({
     onChange: PropTypes.func,
     options: React.PropTypes.oneOfType([
       React.PropTypes.array,
-      React.PropTypes.object
+      React.PropTypes.object,
     ]),
-    value: PropTypes.string
+    value: PropTypes.string,
   },
 
   getDefaultProps() {
@@ -52,7 +52,7 @@ export default React.createClass({
       type: 'radio',
       checked,
       ref: index,
-      onChange: this.onChange
+      onChange: this.onChange,
     };
     return (
       <label
@@ -81,5 +81,5 @@ export default React.createClass({
         {this.renderRadios()}
       </ControlWrapper>
     );
-  }
+  },
 });

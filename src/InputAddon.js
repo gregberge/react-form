@@ -10,7 +10,7 @@ export default React.createClass({
   propTypes: {
     children: PropTypes.node,
     control: PropTypes.instanceOf(Input),
-    className: PropTypes.string
+    className: PropTypes.string,
   },
 
   mixins: [PureRenderMixin],
@@ -23,9 +23,9 @@ export default React.createClass({
       children, className, ...props} = this.props;
     const spanProps = {
       ...props,
-      className: classNames('input-group-addon', className)
+      className: classNames('input-group-addon', className),
     };
 
     return <span {...spanProps}>{children}</span>;
-  }
+  },
 });

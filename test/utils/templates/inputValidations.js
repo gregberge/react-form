@@ -8,7 +8,7 @@ export default ({Component, element}) => {
   describe('validations', () => {
     it('should put hasError class if needed', () => {
       const instance = TestUtils.renderIntoDocument(
-        <Form><Component name="comp" defaultValue="" validations="isNumeric" /></Form>
+        <Form><Component name="comp" defaultValue="" validations="isNumeric" /></Form>,
       );
 
       const domElement = ReactDOM.findDOMNode(instance);

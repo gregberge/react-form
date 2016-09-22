@@ -13,9 +13,9 @@ export default React.createClass({
     onChange: PropTypes.func,
     options: React.PropTypes.oneOfType([
       React.PropTypes.array,
-      React.PropTypes.object
+      React.PropTypes.object,
     ]),
-    placeholder: PropTypes.string
+    placeholder: PropTypes.string,
   },
 
   getDefaultProps() {
@@ -59,7 +59,7 @@ export default React.createClass({
     const props = {
       key: index,
       value: entry.value,
-      ref: index
+      ref: index,
     };
     return <option {...props}>{entry.label}</option>;
   },
@@ -88,5 +88,5 @@ export default React.createClass({
         </select>
       </ControlWrapper>
     );
-  }
+  },
 });

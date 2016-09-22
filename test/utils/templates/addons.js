@@ -9,7 +9,7 @@ export default ({Component, element}) => {
     describe('with label', () => {
       it('should support leftAddon attribute', () => {
         const instance = TestUtils.renderIntoDocument(
-          <Form><Component label="My label" name="comp" leftAddon={<InputAddon>cool addon</InputAddon>} /></Form>
+          <Form><Component label="My label" name="comp" leftAddon={<InputAddon>cool addon</InputAddon>} /></Form>,
         );
 
         const el = ReactDOM.findDOMNode(instance);
@@ -23,7 +23,7 @@ export default ({Component, element}) => {
 
       it('should support rightAddon attribute', () => {
         const instance = TestUtils.renderIntoDocument(
-          <Form><Component label="My label" name="comp" rightAddon={<InputAddon>cool addon</InputAddon>} /></Form>
+          <Form><Component label="My label" name="comp" rightAddon={<InputAddon>cool addon</InputAddon>} /></Form>,
         );
 
         const el = ReactDOM.findDOMNode(instance);
@@ -39,7 +39,7 @@ export default ({Component, element}) => {
     describe('without label', () => {
       it('should support leftAddon attribute', () => {
         const instance = TestUtils.renderIntoDocument(
-          <Form><Component name="comp" leftAddon={<InputAddon>cool addon</InputAddon>} /></Form>
+          <Form><Component name="comp" leftAddon={<InputAddon>cool addon</InputAddon>} /></Form>,
         );
 
         const el = ReactDOM.findDOMNode(instance);
@@ -51,7 +51,7 @@ export default ({Component, element}) => {
 
       it('should support rightAddon attribute', () => {
         const instance = TestUtils.renderIntoDocument(
-          <Form><Component name="comp" rightAddon={<InputAddon>cool addon</InputAddon>} /></Form>
+          <Form><Component name="comp" rightAddon={<InputAddon>cool addon</InputAddon>} /></Form>,
         );
 
         const el = ReactDOM.findDOMNode(instance);

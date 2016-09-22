@@ -16,7 +16,7 @@ export default ({Component, element}) => {
             onChange={spy}
             options={['foo', 'bar']}
           />
-        </Form>
+        </Form>,
       );
 
       const el = ReactDOM.findDOMNode(instance).querySelector(element);
@@ -37,7 +37,7 @@ export default ({Component, element}) => {
             options={['foo', 'bar']}
             value="foo"
           />
-        </Form>
+        </Form>,
       );
 
       const el = ReactDOM.findDOMNode(instance).querySelector(element);
