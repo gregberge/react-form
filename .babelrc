@@ -1,3 +1,4 @@
 {
-  "presets": ["doctolib"]
+  "presets": [["env", { "loose": true }], "react"],
+  "plugins": ["transform-object-rest-spread"]
 }

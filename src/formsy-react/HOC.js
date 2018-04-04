@@ -1,11 +1,13 @@
+/* eslint-disable */
 import React from 'react'
 import createReactClass from 'create-react-class'
-import Formsy from './formsy-react'
+import Mixin from './Mixin'
 
-module.exports = function hoc(Component) {
+module.exports = function(Component) {
   return createReactClass({
-    mixins: [Formsy.Mixin],
-    render() {
+    displayName: 'Formsy(' + getDisplayName(Component) + ')',
+    mixins: [Mixin],
+    render: function() {
       return React.createElement(Component, {
         setValidations: this.setValidations,
         setValue: this.setValue,
@@ -23,8 +25,11 @@ module.exports = function hoc(Component) {
         showError: this.showError,
         isValidValue: this.isValidValue,
         ...this.props,
-        ...this.state,
       })
     },
   })
+}
+
+function getDisplayName(Component) {
+  return Component.displayName || Component.name || (typeof Component === 'string' ? Component : 'Component')
 }

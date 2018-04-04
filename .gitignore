@@ -1,5 +1,2 @@
-node_modules
-examples/dist
-lib
-.publish
-coverage
+node_modules/
+/lib/

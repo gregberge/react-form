@@ -1,25 +1,23 @@
-import React, {PropTypes} from 'react';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
+import React from 'react'
+import PropTypes from 'prop-types'
+import createReactClass from 'create-react-class'
+import PureRenderMixin from 'react-addons-pure-render-mixin'
+import classNames from 'classnames'
+import Formsy from './formsy-react'
+import ControlWrapper from './ControlWrapper'
+import ControlMixin from './ControlMixin'
 
-import ControlWrapper from './ControlWrapper';
-import ControlMixin from './ControlMixin';
-import Formsy from 'formsy-react';
-import classNames from 'classnames';
-
-export default React.createClass({
+export default createReactClass({
   displayName: 'Select',
 
   propTypes: {
     onChange: PropTypes.func,
-    options: React.PropTypes.oneOfType([
-      React.PropTypes.array,
-      React.PropTypes.object,
-    ]),
+    options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     placeholder: PropTypes.string,
   },
 
   getDefaultProps() {
-    return {options: []};
+    return { options: [] }
   },
 
   mixins: [Formsy.Mixin, ControlMixin, PureRenderMixin],
@@ -31,12 +29,11 @@ export default React.createClass({
    */
 
   renderPlaceHolder() {
-    const {placeholder} = this.props;
+    const { placeholder } = this.props
 
-    if (!placeholder)
-      return null;
+    if (!placeholder) return null
 
-    return <option value="">{placeholder}</option>;
+    return <option value="">{placeholder}</option>
   },
 
   /**
@@ -46,7 +43,7 @@ export default React.createClass({
    */
 
   renderOptions() {
-    return this.getOptions().map(this.renderOption);
+    return this.getOptions().map(this.renderOption)
   },
 
   /**
@@ -60,8 +57,8 @@ export default React.createClass({
       key: index,
       value: entry.value,
       ref: index,
-    };
-    return <option {...props}>{entry.label}</option>;
+    }
+    return <option {...props}>{entry.label}</option>
   },
 
   /**
@@ -71,22 +68,22 @@ export default React.createClass({
    */
 
   onChange(event) {
-    this.changeValue(event.target.value);
+    this.changeValue(event.target.value)
   },
 
   render() {
-    const {onChange} = this;
+    const { onChange } = this
 
-    const controlProps = this.getControlProps();
-    const className = classNames(controlProps.className, {placeholder: !this.getValue()});
+    const controlProps = this.getControlProps()
+    const className = classNames(controlProps.className, { placeholder: !this.getValue() })
 
     return (
       <ControlWrapper {...this.getWrapperProps()}>
-        <select {...controlProps} {...{onChange, className}}>
+        <select {...controlProps} {...{ onChange, className }}>
           {this.renderPlaceHolder()}
           {this.renderOptions()}
         </select>
       </ControlWrapper>
-    );
+    )
   },
-});
+})

@@ -1,4 +1,4 @@
-import {PropTypes} from 'react';
+import PropTypes from 'prop-types'
 
 export default {
   propTypes: {
@@ -16,20 +16,18 @@ export default {
    * Patch formsy to support defaultValue.
    */
   componentWillMount() {
-    const value = typeof this.props.defaultValue === 'undefined'
-      ? this.props.value
-      : this.props.defaultValue;
+    const value = typeof this.props.defaultValue === 'undefined' ? this.props.value : this.props.defaultValue
 
     this.setState({
       _value: value,
       _pristineValue: value,
-    });
+    })
   },
 
   getDefaultProps() {
     return {
       className: 'form-control',
-    };
+    }
   },
 
   /**
@@ -38,26 +36,20 @@ export default {
    * @returns {{value: string, label: string}[]}
    */
   getOptions() {
-    const {options} = this.props;
+    const { options } = this.props
 
-    if (!Array.isArray(options))
-      return Object.keys(options)
-        .map(key =>
-          ({value: String(key), label: options[key]}),
-        );
+    if (!Array.isArray(options)) return Object.keys(options).map(key => ({ value: String(key), label: options[key] }))
 
-    return options.map(entry =>
-      typeof entry === 'string' ? ({value: entry, label: entry}) : entry,
-    );
+    return options.map(entry => (typeof entry === 'string' ? { value: entry, label: entry } : entry))
   },
 
   // from https://github.com/twisty/formsy-react-components/
   hashString(string) {
-    let hash = 0;
+    let hash = 0
     for (let i = 0; i < string.length; i++) {
-      hash = (((hash << 5) - hash) + string.charCodeAt(i)) & 0xFFFFFFFF;
+      hash = ((hash << 5) - hash + string.charCodeAt(i)) & 0xffffffff
     }
-    return hash;
+    return hash
   },
 
   // from https://github.com/twisty/formsy-react-components/
@@ -67,34 +59,36 @@ export default {
       leftAddon,
       rightAddon,
       /* eslint-enable no-unused-vars */
-      ...hashProps,
-    } = this.props;
-    return this.props.id
-      || this.props.name.split('[').join('_').replace(']', '')
-        + this.hashString(JSON.stringify(hashProps));
+      ...hashProps
+    } = this.props
+    return (
+      this.props.id ||
+      this.props.name
+        .split('[')
+        .join('_')
+        .replace(']', '') + this.hashString(JSON.stringify(hashProps))
+    )
   },
 
   getControlProps() {
-    const {className, name, disabled} = this.props;
-    const value = this.getValue();
-    return {className, id: this.getId(), name, value, disabled};
+    const { className, name, disabled } = this.props
+    const value = this.getValue()
+    return { className, id: this.getId(), name, value, disabled }
   },
 
   getWrapperProps() {
-    const {label, wrapperClassName} = this.props;
-    const hasError = !this.isValid() && !this.isPristine();
-    return {componentId: this.getId(), className: wrapperClassName, hasError, label};
+    const { label, wrapperClassName } = this.props
+    const hasError = !this.isValid() && !this.isPristine()
+    return { componentId: this.getId(), className: wrapperClassName, hasError, label }
   },
 
   changeValue(nextValue) {
-    const prevValue = this.getValue();
+    const prevValue = this.getValue()
 
-    if (String(prevValue) === String(nextValue))
-      return;
+    if (String(prevValue) === String(nextValue)) return
 
-    this.setValue(nextValue);
+    this.setValue(nextValue)
 
-    if (this.props.onChange)
-      this.props.onChange(nextValue);
+    if (this.props.onChange) this.props.onChange(nextValue)
   },
-};
+}

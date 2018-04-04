@@ -1,16 +1,16 @@
 {
   "name": "@doctolib/react-form",
-  "version": "3.1.0",
+  "version": "4.0.0-alpha.1",
   "description": "Set of React form components based on react-formsy.",
   "main": "lib/index.js",
   "files": [
     "lib"
   ],
   "scripts": {
-    "coveralls": "gulp coveralls",
-    "travis": "npm run lint && npm run coveralls",
+    "build": "babel -d lib src",
+    "travis": "yarn lint",
     "lint": "eslint .",
-    "test": "gulp test"
+    "format": "prettier --write \"src/**/*.js\""
   },
   "repository": {
     "type": "git",
@@ -28,39 +28,33 @@
   },
   "homepage": "http://doctolib.github.io/react-form/",
   "devDependencies": {
-    "@doctolib/gulp-tasks": "^5.0.0",
-    "babel-eslint": "^6.0.3",
-    "babel-preset-doctolib": "^2.0.0",
-    "babel-preset-es2015": "^6.6.0",
-    "babel-preset-react": "^6.5.0",
-    "chai": "^3.4.0",
-    "chai-dom": "^1.2.0",
-    "dirty-chai": "^1.2.2",
-    "eslint": "^2.8.0",
-    "eslint-config-doctolib": "^2.0.0",
-    "eslint-plugin-mocha": "^2.2.0",
-    "eslint-plugin-react": "^5.0.1",
-    "eslint-plugin-babel": "^3.3.0",
-    "gulp": "^3.9.1",
-    "react": "^15.0.1",
-    "react-addons-pure-render-mixin": "^15.0.1",
-    "react-addons-test-utils": "^15.0.1",
-    "react-bootstrap": "^0.30.2",
-    "react-dom": "^15.0.1",
-    "sinon": "^1.17.2",
-    "sinon-chai": "^2.8.0"
-  },
-  "examples": {
-    "title": "React form"
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "prettier": "^1.11.1",
+    "react": "^16.3.1",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.3.1"
   },
   "dependencies": {
     "classnames": "^2.2.0",
-    "formsy-react": "^0.18.0"
+    "create-react-class": "^15.6.3",
+    "form-data-to-object": "^0.2.0",
+    "prop-types": "^15.6.1",
+    "react-addons-pure-render-mixin": "^15.6.2"
   },
   "peerDependencies": {
-    "react": "^15.0.1",
-    "react-dom": "^15.0.1",
-    "react-addons-pure-render-mixin": "^15.0.1",
-    "react-bootstrap": "^0.30.2"
+    "react": ">=15",
+    "react-addons-pure-render-mixin": ">=15",
+    "react-bootstrap": ">=0.30",
+    "react-dom": ">=15"
   }
 }

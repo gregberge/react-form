@@ -1,25 +1,24 @@
-import React, {PropTypes} from 'react';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
+import React from 'react'
+import PropTypes from 'prop-types'
+import createReactClass from 'create-react-class'
+import PureRenderMixin from 'react-addons-pure-render-mixin'
+import Formsy from './formsy-react'
 
-import ControlWrapper from './ControlWrapper';
-import ControlMixin from './ControlMixin';
-import Formsy from 'formsy-react';
+import ControlWrapper from './ControlWrapper'
+import ControlMixin from './ControlMixin'
 
-export default React.createClass({
+export default createReactClass({
   displayName: 'RadioGroup',
 
   propTypes: {
     className: PropTypes.string,
     onChange: PropTypes.func,
-    options: React.PropTypes.oneOfType([
-      React.PropTypes.array,
-      React.PropTypes.object,
-    ]),
+    options: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     value: PropTypes.string,
   },
 
   getDefaultProps() {
-    return {options: []};
+    return { options: [] }
   },
 
   mixins: [Formsy.Mixin, ControlMixin, PureRenderMixin],
@@ -31,7 +30,7 @@ export default React.createClass({
    */
 
   renderRadios() {
-    return this.getOptions().map(this.renderRadio);
+    return this.getOptions().map(this.renderRadio)
   },
 
   /**
@@ -41,9 +40,9 @@ export default React.createClass({
    */
 
   renderRadio(entry, index) {
-    const {className} = this.props;
-    const checked = this.props.value === undefined || this.props.value === null
-      ? null : entry.value === this.props.value;
+    const { className } = this.props
+    const checked =
+      this.props.value === undefined || this.props.value === null ? null : entry.value === this.props.value
     const props = {
       ...this.getControlProps(),
       id: null,
@@ -53,15 +52,13 @@ export default React.createClass({
       checked,
       ref: index,
       onChange: this.onChange,
-    };
+    }
     return (
-      <label
-        className="radio-inline"
-        key={index}
-      >
-        <input {...props} />{entry.label}
+      <label className="radio-inline" key={index}>
+        <input {...props} />
+        {entry.label}
       </label>
-    );
+    )
   },
 
   /**
@@ -71,15 +68,10 @@ export default React.createClass({
    */
 
   onChange(event) {
-    if (event.target.checked)
-      this.changeValue(event.target.value);
+    if (event.target.checked) this.changeValue(event.target.value)
   },
 
   render() {
-    return (
-      <ControlWrapper {...this.getWrapperProps()}>
-        {this.renderRadios()}
-      </ControlWrapper>
-    );
+    return <ControlWrapper {...this.getWrapperProps()}>{this.renderRadios()}</ControlWrapper>
   },
-});
+})

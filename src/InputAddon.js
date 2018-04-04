@@ -1,10 +1,12 @@
-import React, {PropTypes} from 'react';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
-import classNames from 'classnames';
+import React from 'react'
+import PropTypes from 'prop-types'
+import createReactClass from 'create-react-class'
+import PureRenderMixin from 'react-addons-pure-render-mixin'
+import classNames from 'classnames'
 
-import Input from './Input';
+import Input from './Input'
 
-export default React.createClass({
+export default createReactClass({
   displayName: 'InputAddon',
 
   propTypes: {
@@ -20,12 +22,15 @@ export default React.createClass({
       /* eslint-disable no-unused-vars */
       control,
       /* eslint-enable no-unused-vars */
-      children, className, ...props} = this.props;
+      children,
+      className,
+      ...props
+    } = this.props
     const spanProps = {
       ...props,
       className: classNames('input-group-addon', className),
-    };
+    }
 
-    return <span {...spanProps}>{children}</span>;
+    return <span {...spanProps}>{children}</span>
   },
-});
+})

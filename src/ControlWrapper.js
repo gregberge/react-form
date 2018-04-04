@@ -1,9 +1,11 @@
-import React, {PropTypes} from 'react';
-import Col from 'react-bootstrap/lib/Col';
-import classNames from 'classnames';
-import PureRenderMixin from 'react-addons-pure-render-mixin';
+import React from 'react'
+import PropTypes from 'prop-types'
+import createReactClass from 'create-react-class'
+import Col from 'react-bootstrap/lib/Col'
+import classNames from 'classnames'
+import PureRenderMixin from 'react-addons-pure-render-mixin'
 
-export default React.createClass({
+export default createReactClass({
   displayName: 'ControlWrapper',
 
   propTypes: {
@@ -18,35 +20,26 @@ export default React.createClass({
   mixins: [PureRenderMixin],
 
   render() {
-    const {componentId, label, children} = this.props;
-    const className = classNames({
-      'has-error': this.props.hasError,
-    }, this.props.className);
+    const { componentId, label, children } = this.props
+    const className = classNames(
+      {
+        'has-error': this.props.hasError,
+      },
+      this.props.className
+    )
 
-    const control = this.props.hasAddon
-      ? <div className="input-group">{children}</div> : children;
+    const control = this.props.hasAddon ? <div className="input-group">{children}</div> : children
 
     if (label)
       return (
-        <div {...{className: classNames(className, 'form-group')}}>
-          <Col
-            className="control-label"
-            componentClass="label"
-            htmlFor={componentId}
-            sm={3}
-          >
+        <div {...{ className: classNames(className, 'form-group') }}>
+          <Col className="control-label" componentClass="label" htmlFor={componentId} sm={3}>
             {label}
           </Col>
-          <Col sm={9}>
-            {control}
-          </Col>
+          <Col sm={9}>{control}</Col>
         </div>
-      );
+      )
 
-    return (
-      <span {...{className}}>
-        {control}
-      </span>
-    );
+    return <span {...{ className }}>{control}</span>
   },
-});
+})

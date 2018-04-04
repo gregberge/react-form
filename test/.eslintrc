@@ -1,8 +1,0 @@
-{
-  "extends": ["doctolib/react", "doctolib/test"],
-
-  "rules": {
-    "react/prefer-es6-class": 0,
-    "react/jsx-no-literals": 0
-  }
-}
