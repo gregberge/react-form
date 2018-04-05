@@ -1,4 +1,5 @@
 # react-form
+
 [![Build Status](https://travis-ci.org/doctolib/react-form.svg?branch=master)](https://travis-ci.org/doctolib/react-form)
 [![Coverage Status](https://coveralls.io/repos/doctolib/react-form/badge.svg?branch=master&service=github)](https://coveralls.io/github/doctolib/react-form?branch=master)
 [![Dependency Status](https://david-dm.org/doctolib/react-form.svg?theme=shields.io)](https://david-dm.org/doctolib/react-form)
@@ -19,8 +20,8 @@ npm install @doctolib/react-form
 Refer to [formsy-react](https://github.com/christianalfoni/formsy-react#how-to-use).
 
 ```js
-import {Form} from '@doctolib/react-form';
-const Component = () => <Form/>;
+import { Form } from '@doctolib/react-form'
+const Component = () => <Form />
 ```
 
 ### HOC
@@ -29,8 +30,8 @@ Wrapper used to create custom control compatible with react-form validation.
 All props, states and methods are accessible via props in the wrapped component.
 
 ```js
-import {HOC} from '@doctolib/react-form';
-const Component = HOC((...props) => <input {...props} />);
+import { HOC } from '@doctolib/react-form'
+const Component = HOC((...props) => <input {...props} />)
 ```
 
 ### Input
@@ -38,8 +39,8 @@ const Component = HOC((...props) => <input {...props} />);
 Input component.
 
 ```js
-import {Input} from '@doctolib/react-form';
-const Component = () => <Input name="firstname"/>;
+import { Input } from '@doctolib/react-form'
+const Component = () => <Input name="firstname" />
 ```
 
 ### Textarea
@@ -47,8 +48,8 @@ const Component = () => <Input name="firstname"/>;
 Textarea component.
 
 ```js
-import {Textarea} from '@doctolib/react-form';
-const Component = () => <Textarea name="comment"/>;
+import { Textarea } from '@doctolib/react-form'
+const Component = () => <Textarea name="comment" />
 ```
 
 ### Select
@@ -56,8 +57,8 @@ const Component = () => <Textarea name="comment"/>;
 Select component.
 
 ```js
-import {Select} from '@doctolib/react-form';
-const Component = () => <Select options={{value: 'Label'}} name="select"/>;
+import { Select } from '@doctolib/react-form'
+const Component = () => <Select options={{ value: 'Label' }} name="select" />
 ```
 
 ### InputAddon
@@ -65,14 +66,10 @@ const Component = () => <Select options={{value: 'Label'}} name="select"/>;
 Addon for input.
 
 ```js
-import {Input, InputAddon} from '@doctolib/react-form';
+import { Input, InputAddon } from '@doctolib/react-form'
 const Component = () => (
-  <Input
-    name="firstname"
-    leftAddon={<InputAddon>hey</InputAddon>}
-    rightAddon={<InputAddon>you</InputAddon>}
-  />
-);
+  <Input name="firstname" leftAddon={<InputAddon>hey</InputAddon>} rightAddon={<InputAddon>you</InputAddon>} />
+)
 ```
 
 ### RadioGroup
@@ -80,13 +77,8 @@ const Component = () => (
 Group of radios.
 
 ```js
-import {RadioGroup} from '@doctolib/react-form';
-const Component = () => (
-  <RadioGroup
-    name="radio"
-    options={{value: 'Label'}}
-  />
-);
+import { RadioGroup } from '@doctolib/react-form'
+const Component = () => <RadioGroup name="radio" options={{ value: 'Label' }} />
 ```
 
 ### CheckboxGroup
@@ -94,15 +86,9 @@ const Component = () => (
 Group of checkboxes.
 
 ```js
-import {CheckboxGroup} from '@doctolib/react-form';
-const Component = () => (
-  <CheckboxGroup
-    name="checkbox"
-    options={{value: 'Label'}}
-  />
-);
+import { CheckboxGroup } from '@doctolib/react-form'
+const Component = () => <CheckboxGroup name="checkbox" options={{ value: 'Label' }} />
 ```
-
 
 ## License
 
